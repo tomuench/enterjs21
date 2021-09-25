@@ -1,0 +1,8 @@
+<div *ngIf="messages.length == 0">
+    Keine Nachrichten vorhanden
+</div>
+<div *ngIf="messages.length > 0">
+    <ul>
+        <li *ngFor="let message of messages">{{message}}</li>
+    </ul>
+</div>
