@@ -10,11 +10,13 @@ export class GreeterInput extends HTMLElement {
     _emitEvent(message){
         let changeEvent = new CustomEvent("change", { detail: message});
         this.dispatchEvent(changeEvent);
+        this._input.value = "";
     }
 
     connectedCallback() {
         this._input.placeholder = "Bitte hier ihren Text eingeben";
         this._input.type = "text";
+        this._input.value = "";
 
         this._button.innerText = "Senden";
         this._button.addEventListener("click", () => this._emitEvent(this._input.value));
